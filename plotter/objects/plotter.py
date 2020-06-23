@@ -664,7 +664,7 @@ norm_sig_{ch}_{y}_{cat}                     lnN             1.2                 
                     
                     # data in tight
                     all_obs_prompt_norm = copy(all_obs_prompt)
-                    all_obs_prompt_norm.Scale(1./all_obs_prompt_norm.integral())
+                    all_obs_prompt_norm.Scale(np.nan_to_num(np.divide(1., all_obs_prompt_norm.integral())))
                     all_obs_prompt_norm.drawstyle = 'hist e'
                     all_obs_prompt_norm.linecolor = 'black'
                     all_obs_prompt_norm.markersize = 0
@@ -675,7 +675,7 @@ norm_sig_{ch}_{y}_{cat}                     lnN             1.2                 
                     # data MC subtracted in loose
                     all_obs_prompt_mc_sub_norm = copy(all_obs_prompt)
                     all_obs_prompt_mc_sub_norm.add(all_exp_prompt, -1)
-                    all_obs_prompt_mc_sub_norm.Scale(1./all_obs_prompt_mc_sub_norm.integral())
+                    all_obs_prompt_mc_sub_norm.Scale(np.nan_to_num(np.divide(1., all_obs_prompt_mc_sub_norm.integral())))
                     all_obs_prompt_mc_sub_norm.drawstyle = 'hist e'
                     all_obs_prompt_mc_sub_norm.linecolor = 'green'
                     all_obs_prompt_mc_sub_norm.markersize = 0
@@ -685,7 +685,7 @@ norm_sig_{ch}_{y}_{cat}                     lnN             1.2                 
 
                     # data in loose
                     all_obs_nonprompt_control_norm = copy(all_obs_nonprompt_control)
-                    all_obs_nonprompt_control_norm.Scale(1./all_obs_nonprompt_control_norm.integral())
+                    all_obs_nonprompt_control_norm.Scale(np.nan_to_num(np.divide(1., all_obs_nonprompt_control_norm.integral())))
                     all_obs_nonprompt_control_norm.drawstyle = 'hist e'
                     all_obs_nonprompt_control_norm.linecolor = 'red'
                     all_obs_nonprompt_control_norm.markersize = 0
@@ -696,7 +696,7 @@ norm_sig_{ch}_{y}_{cat}                     lnN             1.2                 
                     # data MC subtracted in loose
                     all_obs_nonprompt_control_mc_sub_norm = copy(all_obs_nonprompt_control)
                     all_obs_nonprompt_control_mc_sub_norm.add(stack_control.sum, -1)
-                    all_obs_nonprompt_control_mc_sub_norm.Scale(1./all_obs_nonprompt_control_mc_sub_norm.integral())
+                    all_obs_nonprompt_control_mc_sub_norm.Scale(np.nan_to_num(np.divide(1., all_obs_nonprompt_control_mc_sub_norm.integral())))
                     all_obs_nonprompt_control_mc_sub_norm.drawstyle = 'hist e'
                     all_obs_nonprompt_control_mc_sub_norm.linecolor = 'blue'
                     all_obs_nonprompt_control_mc_sub_norm.markersize = 0
