@@ -107,7 +107,7 @@ trainer = Trainer (
 #         'l2_ptcone'      ,
         'log_hnl_2d_disp',
 #         'isdata'         ,
-        'log_hnl_2d_disp_sig_log',
+#        'log_hnl_2d_disp_sig_log',
 
 #         'l0_pt'          ,
 #         'abs_l0_eta'     ,

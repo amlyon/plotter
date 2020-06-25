@@ -38,7 +38,8 @@ pandas_selection = ''
 selection_mc = selection + [cuts.selections['is_prompt_lepton']]
 selection_tight = cuts.selections_pd['tight']
 
-training = 'run2/all_channels__200604_15h_13m'
+training = 'run2/all_channels__200623_17h_51m'
+#training = 'run2/all_channels__200604_15h_13m'
 # training = 'run2/all_channels__200602_17h_26m'
 # training = 'run2/all_channels__200601_18h_20m'
 # training = '2018/all_channels__200528_23h_35m'
@@ -76,13 +77,15 @@ plotter = Plotter (
     plot_signals     = False, 
     blinded          = False,
 
-    datacards        = ['log_hnl_2d_disp'        , 
-                        'hnl_m_12'               ,  
-                        'hnl_m_12_lxy_lt_0p5'    , 
-                        'hnl_m_12_lxy_0p5_to_1p5', 
-                        'hnl_m_12_lxy_1p5_to_4p0', 
-                        'hnl_m_12_lxy_mt_4p0'], # FIXME! improve this to accept wildcards / regex
+    #datacards        = ['log_hnl_2d_disp'        , 
+    #                    'hnl_m_12'               ,  
+    #                    'hnl_m_12_lxy_lt_0p5'    , 
+    #                    'hnl_m_12_lxy_0p5_to_1p5', 
+    #                    'hnl_m_12_lxy_1p5_to_4p0', 
+    #                    'hnl_m_12_lxy_mt_4p0'], # FIXME! improve this to accept wildcards / regex
     
+    datacards        = ['hnl_m_12_lxy_lt_0p5', 'hnl_m_12_lxy_0p5_to_1p5', 'hnl_m_12_lxy_1p5_to_4p0', 'hnl_m_12_lxy_mt_4p0'],                    
+
     mc_subtraction   = False,
     
     data_driven      = True,
