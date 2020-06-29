@@ -210,7 +210,6 @@ if __name__ == "__main__":
     limits2D[mass]['exp_plus_two' ] = x_plus_two 
     if not opt.run_blind:
         limits2D[mass]['obs'] = x_obs 
-  
 
   print '\nwill plot 2D limits' 
   with open('{}/results.pck'.format(plotDir), 'w') as ff:
@@ -237,20 +236,18 @@ if __name__ == "__main__":
             obs.append( min(limits2D[mass]['obs']) )
             masses_obs.append(mass)
       
-      if len(limits2D[mass]['exp_minus_one'])==len(limits2D[mass]['exp_plus_one']) and len(limits2D[mass]['exp_minus_two'])==len(limits2D[mass]['exp_plus_two']):
-        if len(limits2D[mass]['exp_central'])>0:
+      if len(limits2D[mass]['exp_central'])>0 and len(limits2D[mass]['exp_minus_one'])>0 and len(limits2D[mass]['exp_plus_one' ])>0 and len(limits2D[mass]['exp_minus_two'])>0 and len(limits2D[mass]['exp_plus_two' ])>0:
           central.append( min(limits2D[mass]['exp_central']) )
           masses_central.append(float(mass))
 
-        if len(limits2D[mass]['exp_minus_one'])>0 and len(limits2D[mass]['exp_plus_one' ])>0: 
           minus_one.append( min(limits2D[mass]['exp_minus_one']) )
-          plus_one .append( min(limits2D[mass]['exp_plus_one' ]) )
+          plus_one.append( min(limits2D[mass]['exp_plus_one' ]) )
           masses_one_sigma.append(float(mass))
 
-        if len(limits2D[mass]['exp_minus_two'])>0 and len(limits2D[mass]['exp_plus_two' ])>0: 
           minus_two.append( min(limits2D[mass]['exp_minus_two']) )
-          plus_two .append( min(limits2D[mass]['exp_plus_two' ]) )
+          plus_two.append( min(limits2D[mass]['exp_plus_two' ]) )
           masses_two_sigma.append(float(mass))
+
      
   for mass in sorted(limits2D.keys(), key=sortList, reverse=True):
 
