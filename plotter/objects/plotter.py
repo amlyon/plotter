@@ -664,7 +664,9 @@ norm_sig_{ch}_{y}_{cat}                     lnN             1.2                 
                     
                     # data in tight
                     all_obs_prompt_norm = copy(all_obs_prompt)
-                    all_obs_prompt_norm.Scale(np.nan_to_num(np.divide(1., all_obs_prompt_norm.integral())))
+                    if all_obs_prompt_norm.integral() != 0:
+                      all_obs_prompt_norm.Scale(np.nan_to_num(np.divide(1., all_obs_prompt_norm.integral())))
+                    #import pdb; pdb.set_trace()
                     all_obs_prompt_norm.drawstyle = 'hist e'
                     all_obs_prompt_norm.linecolor = 'black'
                     all_obs_prompt_norm.markersize = 0
