@@ -22,18 +22,18 @@ Usage:
 #"----------------User's decision board-----------------"
 
 # choose which scripts to run
-do_combineDatacards = False
-do_produceLimits = False
-do_producePlots = True   #note that this flag can be turned to true only when the limit results have been produced
+do_combineDatacards = True
+do_produceLimits = True
+do_producePlots = False   #note that this flag can be turned to true only when the limit results have been produced
 
 
-version_label = 'test3'
+version_label = 'test00'
 
 # path to datacards # Note that it will get /<year>/<channel> appended
-path_to_datacards = './datacards'
+path_to_datacards = '/work/manzoni/hnl_limits/CMSSW_10_2_13/src/HiggsAnalysis/CombinedLimit/WHNL_code/limits/datacards_july_talk/'
 
 # which years to process
-years = ['2016', '2017', '2018'] 
+years = ['2018'] 
 
 # which channels
 channels = ['mmm', 'mem_os', 'mem_ss']
@@ -50,7 +50,7 @@ datacard_wildcard = 'datacard*hnl_m_12*.txt'
 signal_type = 'majorana'
 
 # you may want to select the mass values you would like to run on
-mass_whiteList = ['10.0', '6.0'] #['10.0']
+mass_whiteList = [] #['10.0']
 
 # you may want to select the mass values you would like to ignore
 mass_blackList = [] 
@@ -100,6 +100,7 @@ if do_produceLimits:
   print 'Will run the limits production tool'
   
   os.system('mkdir -p results/limits/{}'.format(version_label)) 
+  os.system('mkdir -p logs/{}'.format(version_label)) 
   
   if run_blind: flag_blind = 1
   else: flag_blind = 0
