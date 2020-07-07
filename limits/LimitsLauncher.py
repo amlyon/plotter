@@ -141,7 +141,7 @@ if do_producePlots:
  
   print 'will run the limit plotter'
 
-  command_plotter = 'python limit_plotter.py --version {ver} --signal {sig} --channels {ch}  --mass_whitelist {mwl} --mass_blacklist {mbl} --coupling_whitelist {cwl} --coupling_blacklist {cbl}'.format(ver=version_label, sig=signal_type, ch=getStringParser(channels), mwl=getStringParser(mass_whiteList), mbl=getStringParser(mass_blackList), cwl=getStringParser(coupling_whiteList), cbl=getStringParser(coupling_blackList))
+  command_plotter = 'python limit_plotter.py --version {ver} --signal {sig} --years {ys} --channels {ch}  --mass_whitelist {mwl} --mass_blacklist {mbl} --coupling_whitelist {cwl} --coupling_blacklist {cbl}'.format(ver=version_label, sig=signal_type, ys=getStringParser(years), ch=getStringParser(channels), mwl=getStringParser(mass_whiteList), mbl=getStringParser(mass_blackList), cwl=getStringParser(coupling_whiteList), cbl=getStringParser(coupling_blackList))
   if run_blind:
     command_plotter += ' --run_blind'
 
