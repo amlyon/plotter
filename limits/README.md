@@ -1,6 +1,9 @@
 # Limits Analysis Tool
 
 ## Installation
+
+Note: it is preferable to use a bash environment. 
+
 ```
 cmsrel CMSSW_10_2_13
 cd CMSSW_10_2_13/src
@@ -15,7 +18,7 @@ make -j 8; make
 
 ```
 git clone git@github.com:rmanzoni/plotter.git WHNL_code
-cd plotter/limits
+cd WHNLcode/limits
 ```
 
 ## Running the limits
